@@ -14,12 +14,12 @@ public class TestarCatalogo {
                                 null, JOptionPane.INFORMATION_MESSAGE);
 
                 catalo.setNome(JOptionPane.showInputDialog("Nome do Catalogo:"));
-                catalo.setLocal(JOptionPane.showInputDialog("Localização do catalogo:"));
+                catalo.setclassificacao(JOptionPane.showInputDialog("classificacao do livro:"));
 
                 livro livro;
                 ArrayList<livro> listaLivros;
                 int opcao = 0, cont;
-                String opcoes = "Catalogo: " + catalo.getNome() + "\nLocalização: " + catalo.getLocal()
+                String opcoes = "Catalogo: " + catalo.getNome() + "\nclassificacao: " + catalo.getclassificacao()
                                 + "\n\n***Opções*** " + "\n1. Cadastrar Livro" + "\n2. Pesquisar Livro (código)"
                                 + "\n3. Pesquisar Livro (título)" + "\n4. Listar Livros" + "\n5. Informações"
                                 + "\n6. Finalizar" + "\n\nSelecione a opção: ";
@@ -48,7 +48,7 @@ public class TestarCatalogo {
                                         if (livro != null)
                                                 mostrarLivro(livro, catalo.getNome());
                                         else
-                                                JOptionPane.showMessageDialog(null, "Livro Não Localizado!");
+                                                JOptionPane.showMessageDialog(null, "Livro Não classificado!");
                                         break;
                                 case 3:
                                         listaLivros = catalo.obterLivro(JOptionPane
@@ -61,7 +61,7 @@ public class TestarCatalogo {
                                                                         + listaLivros.size());
                                                 }
                                         } else
-                                                JOptionPane.showMessageDialog(null, "Título de Livro Não Localizado!");
+                                                JOptionPane.showMessageDialog(null, "Título de Livro Não localizado!");
                                         break;
                                 case 4: {
                                         StringBuffer lista = new StringBuffer();
@@ -76,9 +76,9 @@ public class TestarCatalogo {
                                         break;
                                 }
                                 case 5:
-                                        JOptionPane.showMessageDialog(null, "Informações da catalogo\n"
+                                        JOptionPane.showMessageDialog(null, "Informações do catalogo\n"
                                                         + "Nome da catalogo: " + catalo.getNome() + "\n"
-                                                        + "Localização: " + catalo.getLocal() + "\n"
+                                                        + "classificação: " + catalo.getclassificacao() + "\n"
                                                         + "Existem até o momento\n" + catalo.getQuantidade()
                                                         + " livro(s) cadastrado(s)");
                                         break;
@@ -92,7 +92,6 @@ public class TestarCatalogo {
                 livro liv = new livro(0, null, null, null);
                 liv.setId(Integer.parseInt(JOptionPane.showInputDialog("Código do Livro:")));
                 liv.setTitulo(JOptionPane.showInputDialog("Título do Livro:"));
-                liv.setAutor(JOptionPane.showInputDialog("Autor do Livro:"));
                 liv.setAutor(JOptionPane.showInputDialog("Autor do Livro:"));
 
                 return liv;

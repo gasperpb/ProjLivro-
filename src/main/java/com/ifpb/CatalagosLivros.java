@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CatalagosLivros {
     private String nome;
-    private String local;
+    private String classificacao;
     private ArrayList<livro> livros;
 
     public CatalagosLivros() {
@@ -16,17 +16,17 @@ public class CatalagosLivros {
         setNome(nome);
     }
 
-    public CatalagosLivros(String nome, String local) {
+    public CatalagosLivros(String nome, String classificacao) {
         this(nome);
-        setLocal(local);
+        setclassificacao(classificacao);
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getLocal() {
-        return local;
+    public String getclassificacao() {
+        return classificacao;
     }
 
     public int getQuantidade() {
@@ -37,8 +37,8 @@ public class CatalagosLivros {
         this.nome = nome;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setclassificacao(String classificacao) {
+        this.classificacao = classificacao;
     }
 
     public void incluirLivro(livro livro) throws NullPointerException {
